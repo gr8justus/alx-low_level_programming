@@ -16,10 +16,8 @@ int main(void)
 	{
 		lower_case_letter = (char)a_z;
 
-		if (lower_case_letter == 'e' || lower_case_letter == 'q')
-			lower_case_letter = '\0';
-
-		putchar(lower_case_letter);
+		if (lower_case_letter != 'e' && lower_case_letter != 'q')
+			putchar(lower_case_letter);
 		a_z++;
 	}
 	putchar('\n');
