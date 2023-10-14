@@ -27,14 +27,14 @@ void fizz_buzz(void)
 	for (l = 1; l <= 100; l++)
 	{
 		if ((l % 5) == 0 && (l % 3) == 0)
-			printf("%s ", "FizzBuzz");
+			printf("FizzBuzz ");
 		else if ((l % 5) == 0)
 			if (l == 100)
-				printf("%s\n", "Buzz");
+				printf("Buzz\n");
 			else
-				printf("%s ", "Buzz");
+				printf("Buzz ");
 		else if ((l % 3) == 0)
-			printf("%s ", "Fizz");
+			printf("Fizz ");
 		else
 			printf("%d ", l);
 	}
