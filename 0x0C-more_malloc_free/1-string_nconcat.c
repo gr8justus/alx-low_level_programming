@@ -12,7 +12,7 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 		s2 = "";
 	s2_length = _strlen(s2);
 
-	if (n > s2_length)
+	if (n >= s2_length)
 		n = s2_length;
 	size = _strlen(s1) + n + 1;
 	concatenated_str = malloc(size);
