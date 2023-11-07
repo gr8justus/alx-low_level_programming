@@ -1,9 +1,17 @@
 #include <stdlib.h>
 #include "main.h"
 
+/**
+ * string_nconcat - concatenates two strings
+ * @s1: String 1
+ * @s2: String 2
+ * @n: Bytes to copy from string 2
+ *
+ * Return: Pointer to concatenated string or NULL (failure).
+ */
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
-	char *concatenated_str = NULL;
+	char *cat_str = NULL;
 	unsigned int s2_length, size;
 
 	if (s1 == NULL)
@@ -15,13 +23,13 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	if (n >= s2_length)
 		n = s2_length;
 	size = _strlen(s1) + n + 1;
-	concatenated_str = malloc(size);
+	cat_str = malloc(size);
 
-	if (concatenated_str == NULL)
+	if (cat_str == NULL)
 		return (NULL);
-	_strcat(concatenated_str, s1);
-	_strncat(concatenated_str, s2, n);
-	return (concatenated_str);
+	_strcat(cat_str, s1);
+	_strncat(cat_str, s2, n);
+	return (cat_str);
 }
 
 /**
