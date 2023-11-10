@@ -19,7 +19,10 @@ void print_numbers(const char *separator, const unsigned int n, ...)
 
 	/* checks if number of argument is 0 or less */
 	if (n <= 0)
+	{
+		putchar('\n');
 		return; /* stops function execution */
+	}
 	va_start(num, n);
 	/* iterates the va_list -num */
 	for (i = 0; i < n; i++)
