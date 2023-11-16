@@ -18,6 +18,5 @@ typedef struct list_s
 } list_t;
 void _putchar(char);
 size_t print_list(const list_t *h);
-size_t print_member(const list_t *member);
 
 #endif
