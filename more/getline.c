@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <errno.h>
 
-#define MIN_LINE_LENGTH 1
+void free_exit(char *str);
 
 /**
   * main - print user input
@@ -20,15 +20,8 @@ int main(void)
 		nread = getline(&lineptr, &n, stdin);
 
 		if (nread == -1) /* check for EOF or failure */
-		{
-			putchar('\n');
-
-			if (errno == EINVAL || errno == ENOMEM)
-				exit(EXIT_FAILURE);
-
-			exit(EXIT_SUCCESS);
-		}
-		else if (nread > MIN_LINE_LENGTH)
+			free_exit(lineptr);
+		else
 			printf("%s", lineptr);
 	} while (nread);
 
@@ -36,4 +29,27 @@ int main(void)
 	lineptr = NULL;
 
 	return (0);
+}
+
+/**
+  * free_exit - free memory and exit
+  * @str: pointer to str to be freed
+  *
+  * Description: frees memory alloted to str
+  * and exits the program
+  *
+  * Return: nothing
+  */
+void free_exit(char *str)
+{
+	putchar('\n');
+	free(str);
+
+	if (errno == EINVAL || errno == ENOMEM)
+	{
+		perror("error");
+		exit(EXIT_FAILURE);
+	}
+	else
+		exit(EXIT_SUCCESS);
 }
