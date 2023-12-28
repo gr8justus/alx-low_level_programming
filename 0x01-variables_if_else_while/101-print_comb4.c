@@ -1,5 +1,8 @@
 #include <stdio.h>
 
+#define MIN 0
+#define MAX 9
+
 /**
  * main - print different combinations
  *
@@ -10,30 +13,31 @@
  */
 int main(void)
 {
-	int i, j, l;
+	int first_digit, second_digit, third_digit;
 
-	for (i = 0; i <= 9; i++)
+	for (first_digit = MIN; first_digit <= MAX; first_digit++)
 	{
-		j = i + 1;
+		second_digit = first_digit + 1;
 
-		while (j <= 9)
+		while (second_digit <= MAX)
 		{
-			l = j + 1;
+			third_digit = second_digit + 1;
 
-			while (l <= 9)
+			while (third_digit <= MAX)
 			{
-				putchar(i | '0');
-				putchar(j | '0');
-				putchar(l | '0');
+				putchar(first_digit | '0');
+				putchar(second_digit | '0');
+				putchar(third_digit | '0');
 
-				if (i == 7 && j == 8 && l == 9)
-					break;
+				if (!(first_digit == 7 && second_digit == 8 && third_digit == MAX))
+				{
 
-				putchar(',');
-				putchar(' ');
-				l++;
+					putchar(',');
+					putchar(' ');
+				}
+				third_digit++;
 			}
-			j++;
+			second_digit++;
 		}
 	}
 	putchar('\n');
