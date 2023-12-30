@@ -7,27 +7,34 @@
  */
 void jack_bauer(void)
 {
-	int hour_digit_1, hour_digit_2, minutes_digit_1, minutes_digit_2, max = 9;
+	int hour, minutes;
 
-	for (hour_digit_1 = MIN; hour_digit_1 <= 2; hour_digit_1++)
+	for (hour = MIN; hour <= 23; hour++)
 	{
-		for (hour_digit_2 = MIN; hour_digit_2 <= max; hour_digit_2++)
+		for (minutes = MIN; minutes <= 59; minutes++)
 		{
-			for (minutes_digit_1 = MIN; minutes_digit_1 <= 5; minutes_digit_1++)
+			if (hour <= 9)
 			{
-				if (hour_digit_1 == 2)
-					max = 3;
-
-				for (minutes_digit_2 = MIN; minutes_digit_2 <= MAX; minutes_digit_2++)
-				{
-					_putchar(hour_digit_1 + '0');
-					_putchar(hour_digit_2 + '0');
-					_putchar(':');
-					_putchar(minutes_digit_1 + '0');
-					_putchar(minutes_digit_2 + '0');
-					_putchar('\n');
-				} /* close minutes_digit_2 iteration block */
-			} /* close minutes_digit_1 iteration block */
-		} /* close hour_digit_2 iteration block */
-	} /* close hour_digit_1 iteration block */
+				_putchar('0');
+				_putchar(hour + '0');
+			}
+			else
+			{
+				_putchar(hour / 10 + '0');
+				_putchar(hour % 10 + '0');
+			}
+			_putchar(':');
+			if (minutes <= 9)
+			{
+				_putchar('0');
+				_putchar(minutes + '0');
+			}
+			else
+			{
+				_putchar(minutes / 10 + '0');
+				_putchar(minutes % 10 + '0');
+			}
+			_putchar('\n');
+		} /* close minutes iteration block */
+	} /* close hour iteration block */
 }
