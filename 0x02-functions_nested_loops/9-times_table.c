@@ -17,7 +17,8 @@ void times_table(void)
 
 			if (product <= MAX)
 			{
-				_putchar(' ');
+				if (multiplier != MIN)
+					_putchar(' ');
 				_putchar(product + '0');
 			}
 			else
