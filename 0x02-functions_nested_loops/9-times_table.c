@@ -1,5 +1,4 @@
 #include "main.h"
-#include <stdio.h>
 
 /**
  * times_table - print the 9 times table
@@ -17,12 +16,20 @@ void times_table(void)
 			product = base_num * multiplier;
 
 			if (product <= MAX)
+			{
 				_putchar(' ');
-
-			printf("%i", product);
-
+				_putchar(product + '0');
+			}
+			else
+			{
+				_putchar(product / 10 + '0');
+				_putchar(product % 10 + '0');
+			}
 			if (multiplier != MAX)
-				printf(", ");
+			{
+				_putchar(',');
+				_putchar(' ');
+			}
 		}
 		_putchar('\n');
 	}
