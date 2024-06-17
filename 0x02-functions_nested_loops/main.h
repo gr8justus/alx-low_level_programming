@@ -20,5 +20,6 @@ void print_times_table(int n);
 int sum_multiples(void);
 void fib();
 int fib_is_even(void);
+void fib_98(void);
 
 #endif
